@@ -27,7 +27,14 @@ I wanted to archive decades of family photos—scans of old prints, high-resolut
 
 ![Screenshot of the application](screenshots/main_screen.png)
 
-## Installation
+## Download
+
+**Windows users**: Download the standalone `.exe` from the [Releases](https://github.com/Tokra110/Mass-Photo-Converter/releases) page—no installation required.
+
+> [!NOTE]
+> Windows SmartScreen may show a warning for unsigned executables. Click **"More info"** → **"Run anyway"** to proceed. The source code is fully open for review.
+
+## Installation (from source)
 
 1. **Clone the repository**:
    ```bash
