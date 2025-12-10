@@ -1,20 +1,29 @@
 # Mass Photo Converter
 
-**Mass Photo Converter** is a high-performance, multi-threaded batch image conversion tool designed to optimize images for modern web standards. It specializes in converting high-quality PNG, TIFF, and JPEG images into next-generation formats like AVIF and WebP, offering significant size reductions with minimal visual loss.
+**Mass Photo Converter** is a high-performance, multi-threaded batch image conversion tool designed to optimize images for modern web standards. It converts PNG, TIFF, and JPEG images into next-generation formats like AVIF and WebP, offering significant size reductions with minimal visual loss.
 
-## Key Features
+## Why I built this
 
-- **🚀 High-Performance Batch Processing**: Utilizes all available CPU cores to convert thousands of images in parallel, ensuring maximum efficiency.
-- **👀 Smart Interactive Preview**: Compare "Original" vs "Converted" images side-by-side in real-time.
-  - **Split-View**: Draggable divider to inspect changes pixel-by-pixel.
-  - **Zoom & Pan**: Deep zoom support for checking fine details.
-- **📊 Quality vs. Size Analysis**: A dedicated analysis tool that renders your image at multiple quality levels (Low/Medium/High details) to plot a curve of File Size vs. Quality. This helps you find the perfect "sweet spot" for compression without guessing.
-- **📂 Deep Folder Scanning**: Recursively scans source directories and replicates the entire folder structure in the output destination.
-- **🎨 Modern Output Formats**:
-  - **AVIF**: Excellent compression, ideal for web use.
-  - **WebP**: Widely supported, effective transparency.
-  - **HEIC**: High effective compression (requires platform support).
-  - **JPEG XL**: Next-gen JPEG update (requires plugin).
+I wanted to archive decades of family photos—scans of old prints, high-resolution camera exports, and everything in between—without them consuming hundreds of gigabytes of storage. Modern formats like AVIF can reduce file sizes by 60-80% while preserving the quality that matters for precious memories. This tool makes it easy to batch-convert entire photo libraries while giving you full control over the quality vs size tradeoff.
+
+## Key features
+
+- **🚀 High-performance batch processing**: Utilizes all available CPU cores to convert thousands of images in parallel.
+- **👀 Interactive split-view preview**: Compare original vs converted images side-by-side in real-time.
+  - **Draggable divider**: Inspect changes pixel-by-pixel.
+  - **Zoom & pan**: Deep zoom support (scroll to zoom, right-drag to pan, double-click to reset).
+- **📊 Quality vs size analysis**: Renders your image at multiple quality levels to plot a curve of file size vs quality. Helps find the perfect compression "sweet spot."
+- **📂 Deep folder scanning**: Recursively scans source directories and replicates folder structure in output.
+- **🎨 Modern dark theme**: Clean, professional UI with a 3-column split layout (controls on left, preview on right).
+
+### Supported output formats
+
+| Format   | Description                                   |
+|----------|-----------------------------------------------|
+| **AVIF** | Excellent compression, ideal for web use      |
+| **WebP** | Widely supported, effective transparency      |
+| **HEIC** | High compression (requires `pillow-heif`)     |
+| **JPEG XL** | Next-gen JPEG (requires `pillow-jxl-plugin`) |
 
 ## Installation
 
@@ -24,36 +33,33 @@
    cd MassPhotoConverter
    ```
 
-2. **Install dependencies**:
-   Ensure you have Python 3.8+ installed. Then run:
+2. **Install dependencies** (Python 3.8+):
    ```bash
    pip install -r requirements.txt
    ```
-   *Note: This will install `PyQt6` for the GUI and `Pillow` along with necessary plugins for AVIF/HEIC support.*
 
 ## Usage
 
-1. **Launch the Application**:
+1. **Launch the application**:
    ```bash
    python main.py
    ```
 
-2. **Select Folders**:
+2. **Select folders**:
    - Click **Browse** next to "Source" to select the folder containing your original images.
    - Click **Browse** next to "Output" to select where converted files should be saved.
 
-3. **Preview & Configure**:
-   - The dropdown list will populate with images found in your source folder.
-   - Click **Load** to open an image in the preview window.
-   - Adjust the **Quality Slider** (5% - 100%) to see real-time changes in the "Converted" pane.
-   - Use the **Compare** dropdowns to check different formats against each other (e.g., AVIF vs WebP).
+3. **Preview & configure**:
+   - Select an image from the dropdown and click **Load** to open it in the preview.
+   - Adjust the **Quality slider** (5% - 100%) to see real-time changes.
+   - Use the **Left/Right** dropdowns to compare different formats (e.g., Original vs AVIF).
 
-4. **Analyze (Optional)**:
-   - Click **📊 Start Analysis** to generate a chart showing how different quality settings affect file size for your specific image. This is great for making data-driven decisions on compression settings.
+4. **Analyze (optional)**:
+   - Click **📊 Start analysis** to generate a chart showing how different quality settings affect file size.
 
 5. **Convert**:
-   - Select your target format (e.g., AVIF) from the "Conversion output" section.
-   - Click **Start Conversion**. A progress bar will track the batch process.
+   - Select your target format from the "Target format" section.
+   - Click **Start conversion**. A progress bar will track the batch process.
 
 ## Requirements
 
@@ -62,8 +68,8 @@
 - **Libraries**:
   - `PyQt6`
   - `Pillow`
-  - `pillow-heif`
-  - `pillow-jxl-plugin`
+  - `pillow-heif` (optional, for HEIC support)
+  - `pillow-jxl-plugin` (optional, for JPEG XL support)
 
 ## License
 
