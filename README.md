@@ -25,12 +25,14 @@ I wanted to archive decades of family photos—scans of old prints, high-resolut
 | **HEIC** | High compression (requires `pillow-heif`)     |
 | **JPEG XL** | Next-gen JPEG (requires `pillow-jxl-plugin`) |
 
+![Screenshot of the application](screenshots/main_screen.png)
+
 ## Installation
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/MassPhotoConverter.git
-   cd MassPhotoConverter
+   git clone https://github.com/Tokra110/Mass-Photo-Converter.git
+   cd Mass-Photo-Converter
    ```
 
 2. **Install dependencies** (Python 3.8+):
@@ -56,11 +58,11 @@ I wanted to archive decades of family photos—scans of old prints, high-resolut
 
 4. **Analyze (optional)**:
    - Click **📊 Start analysis** to generate a chart showing how different quality settings affect file size.
+   ![Screenshot of the analysis](screenshots/analysis.png)
 
 5. **Convert**:
    - Select your target format from the "Target format" section.
    - Click **Start conversion**. A progress bar will track the batch process.
-
 ## Requirements
 
 - **Operating System**: Windows, macOS, or Linux
